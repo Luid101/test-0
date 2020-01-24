@@ -1,1 +1,4 @@
 tastypie
+djangorestframework
+markdown
+django-filter

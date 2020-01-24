@@ -12,4 +12,8 @@ class Member(AbstractUser):
 
     def __str__(self):
         return self.username + ' from ' + self.country
-    
+
+if __name__ == "__main__":
+    # Was not sure what, "Create a command that creates a Member object..." 
+    # meant but here is what I think it means
+    me = Member(username="me", email="me@mail.com", country="Meville", gender="O")
