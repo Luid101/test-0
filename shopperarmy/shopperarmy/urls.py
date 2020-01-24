@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from members.resources import MemberResource
 
+member_resource = MemberResource()
 
 urlpatterns = [
-    path('members/', include('members.urls')),
+    path('members/', include(member_resource.urls)),
     path('admin/', admin.site.urls),
 ]
 
