@@ -20,3 +20,11 @@ Optional
 * Implement `elasticsearch` - index `Member` objects
 * Implement `celery` - `Member` creation to be run by worker
 * Implement `docker` / `docker-compose` to simultaneously launch frontend and backend (along with DB, if applicable)
+
+Running Instructions
+--------------------
+
+* Start a docker swarm, with "sudo docker swarm init --advertise-addr {available ip, press tab to see them}"
+* Run ./shopperarmy/docker_start to start both the backend and frontend with docker
+* Go to "http://localhost:8080/" to view the vue.js app.
+* Go to "http://localhost:8070/" to view the Django REST framework.
