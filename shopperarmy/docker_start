@@ -1,0 +1,6 @@
+#!/bin/bash
+# before running this, start a docker swarm using the below with an available ip
+# sudo docker swarm init --advertise-addr {available ip, press tab to see them}
+
+# then run the below to start (or just run this file) 
+sudo docker-compose build && sudo docker-compose up
