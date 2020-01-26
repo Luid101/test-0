@@ -19,7 +19,7 @@
                     <td>{{ Users[_id].gender }}</td>
                     <td>
                         <router-link v-if="_id != 1" :to="{name: 'Edit', params: { id: _id }}" class="btn btn-primary">Edit</router-link>
-                        <span v-if="_id == 1"> Is admin </span>
+                        <span v-if="_id == 1"> Is Admin </span>
                     <td>
                     <td>
                         <button v-if="_id != 1" class="btn btn-danger" v-on:click="deleteItem(_id)" >Delete</button>

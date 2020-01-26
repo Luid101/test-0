@@ -18,10 +18,17 @@
                     </div>
                     <div class="form-group">
                         <label>Gender:</label>
-                        <input type="text" class="form-control" v-model="user.gender"/>
+                        <select class="form-control" v-model="user.gender">
+                             <option v-for="option in options" v-bind:value="option.value">
+                                {{ option.text }}
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Update User"/>
+                    </div>
+                    <div v-if="error" class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
                     </div>
                 </form>
             </div>
@@ -36,7 +43,13 @@ export default{
                 auth:{
                     username: process.env.VUE_APP_USER_NAME,
                     password: process.env.VUE_APP_PASSWORD
-                }
+                },
+                options: [
+                    { text: 'Male', value: 'M' },
+                    { text: 'Female', value: 'F' },
+                    { text: 'Other', value: 'O' }
+                ],
+                error:null
             }
         },
 
@@ -59,6 +72,10 @@ export default{
               console.log(uri);
                 this.axios.put(uri, this.user, {auth:this.auth}).then((response) => {
                     this.$router.push({name: 'Index'});
+                    this.error = ""
+                }).catch((_error) => {
+                    this.error = _error;
+                    console.error(this.error);
                 });
             }
         }

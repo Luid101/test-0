@@ -27,6 +27,9 @@
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Add User"/>
                     </div>
+                    <div v-if="error" class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                    </div>
                 </form>
             </div>
         </div>
@@ -49,7 +52,8 @@ export default {
             { text: 'Male', value: 'M' },
             { text: 'Female', value: 'F' },
             { text: 'Other', value: 'O' }
-        ]
+        ],
+        error:null
       }
   },
   methods: {
@@ -58,8 +62,10 @@ export default {
         this.axios.post(uri, this.user, {auth: this.auth}).then((response) => {
             console.log(response.data);
             this.$router.push({name: 'Index'});
-        }).catch(function(error) {
-            console.error(error);
+            this.error = ""
+        }).catch((_error) => {
+            this.error = _error;
+            console.error(this.error);
         });
         }
     }

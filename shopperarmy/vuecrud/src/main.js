@@ -29,7 +29,12 @@ const routes = [
   },
   {
     name: 'Index',
-    path: '/index',
+    path: '/',
+    component: Index
+  },
+  {
+    name: 'Index',
+    path: '/',
     component: Index
   },
 ];
