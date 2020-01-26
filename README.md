@@ -15,7 +15,7 @@ The following are simple tests to Shopper Army job posting. Extra details such a
 Optional
 --------
 
-* Lock all dependencies
+- [ ] Lock all dependencies
 - [x] Implement `django-rest-framework` or `GraphQL` - tie in both frontend and backend using this
 - [ ] Implement `elasticsearch` - index `Member` objects
 - [ ] Implement `celery` - `Member` creation to be run by worker
