@@ -9,15 +9,15 @@
             <div class="card-body">
                 <form v-on:submit.prevent="addUser">
                     <div class="form-group">
-                        <label>username:</label>
+                        <label>Username:</label>
                         <input id="username" type="text" class="form-control" v-model="user.username"/>
                     </div>
                     <div class="form-group">
-                        <label>country:</label>
+                        <label>Country:</label>
                         <input type="text" class="form-control" v-model="user.country"/>
                     </div>
                     <div class="form-group">
-                        <label>gender(M/F/O):</label>
+                        <label>Gender:</label>
                         <select class="form-control" v-model="user.gender">
                              <option v-for="option in options" v-bind:value="option.value">
                                 {{ option.text }}

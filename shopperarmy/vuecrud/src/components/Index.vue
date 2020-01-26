@@ -17,8 +17,14 @@
                     <td>{{ Users[_id].username }}</td>
                     <td>{{ Users[_id].country }}</td>
                     <td>{{ Users[_id].gender }}</td>
-                    <td><router-link :to="{name: 'Edit', params: { id: _id }}" class="btn btn-primary">Edit</router-link></td>
-                    <td><button class="btn btn-danger" v-on:click="deleteItem(_id)" >Delete</button></td>
+                    <td>
+                        <router-link v-if="_id != 1" :to="{name: 'Edit', params: { id: _id }}" class="btn btn-primary">Edit</router-link>
+                        <span v-if="_id == 1"> Is admin </span>
+                    <td>
+                    <td>
+                        <button v-if="_id != 1" class="btn btn-danger" v-on:click="deleteItem(_id)" >Delete</button>
+                        <span v-if="_id == 1"> Can't Touch </span>
+                    </td>
                 </tr>
             </tbody>
         </table>
