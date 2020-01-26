@@ -24,6 +24,7 @@ Optional
 Running Instructions
 --------------------
 
+* Install docker and docker-compose
 * Start a docker swarm, with "sudo docker swarm init --advertise-addr {available ip, press tab to see them}"
 * Run ./shopperarmy/docker_start to start both the backend and frontend with docker
 * Go to "http://localhost:8080/" to view the vue.js app.
